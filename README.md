@@ -1,15 +1,40 @@
-# PhishCheck — URL Phishing Detector
-Client-side phishing analyzer in **HTML/CSS/JS**. No libraries, no tracking, no server.
+# PhishCheck — Offline URL Risk Analyzer
+![banner](assets/brand/banner.png)
 
-**Live:** https://Giuseppe552.github.io/phishcheck/
+**Client-side phishing analyzer** built with **HTML/CSS/JavaScript**.  
+No servers, no tracking, works **fully offline**. Paste a URL → get a **0–100 risk score**, transparent reasons, and **actionable safety tips**.
 
-### What it does
-- Scores risk (0–100) with **transparent reasons**
-- Flags: HTTP, IP-in-URL, “@” trick, many subdomains, heavy `%` encoding
-- Detects **punycode/confusables**, **shorteners**, suspicious **TLDs**
-- Simple **brand-typosquat** heuristic
-- Shows **actionable tips**. All offline (privacy).
+**Live demo:** https://Giuseppe552.github.io/phishcheck/
 
-### Run
+---
+
+## ✨ Features
+- Transparent **risk score** (0–100) with color bar + animated counter
+- Flags: HTTP, IP-in-URL, “@” trick, many subdomains, heavy encoding
+- Detects **punycode/confusables**, shorteners, suspicious TLDs
+- **Actionable tips** (not just a score)
+- **Privacy-first:** All logic in the browser. No network calls.
+- Keyboard accessible + ARIA labels. Dark mode.
+
+---
+
+## 🖼️ Screenshots
+**Desktop**
+![PhishCheck UI](assets/screenshots/desktop.png)
+
+*(Optional) Demo GIF — 30–45s of analyzing a URL*
+![Demo](assets/screenshots/demo.gif)
+
+---
+
+## 🧠 How it works (short)
+- Parses the URL via `URL()` → extracts host, path, query.
+- Heuristics add/subtract points (e.g., HTTP +20, too many subdomains +10, punycode +25, shortener +15).
+- Shows **Findings** with reasons + links to safety resources.
+- Stores theme preference in `localStorage`.
+
+---
+
+## 🚀 Run locally
 ```bash
 npx http-server -p 5174 -c-1 .
