@@ -38,3 +38,14 @@ No servers, no tracking, works **fully offline**. Paste a URL → get a **0–10
 ## 🚀 Run locally
 ```bash
 npx http-server -p 5174 -c-1 .
+Open http://127.0.0.1:5174
+
+## 🧪 Future improvements
+
+Browser extension packaging (MV3)
+
+Import/export allowlists/blocklists
+
+Heuristic weights configurable by user
+
+Add unit tests for parser + heuristics
