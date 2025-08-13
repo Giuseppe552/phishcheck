@@ -4,8 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>PhishCheck — URL Phishing Detector</title>
-  <meta name="description" content="Client-side phishing URL analyzer with risk score and fix tips." />
-  <<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="description" content="Client-side phishing URL analyzer with a transparent risk score, findings, and safety tips. All offline." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#0b0f16" />
 </head>
 <body>
   <header class="header">
@@ -13,36 +15,44 @@
     <p class="tagline">Paste a URL. Get a transparent risk score, reasons, and safety tips — all offline.</p>
   </header>
 
-  <main class="card">
+  <main class="card" role="main">
     <label for="url" class="label">URL to analyze:</label>
-    <input id="url" type="text" placeholder="https://example.com/login?ref=..." spellcheck="false" />
-    <button id="analyze">Analyze</button>
+    <input id="url" type="text" placeholder="https://example.com/login?ref=..." spellcheck="false" aria-label="URL to analyze" />
+    <button id="analyze" aria-label="Analyze URL">Analyze</button>
 
-    <section class="meter">
-      <div class="bar" id="bar"><div class="fill" id="fill"></div></div>
-      <div class="scale"><span>Low</span><span>Medium</span><span>High</span><span>Critical</span></div>
-      <div class="score"><strong>Risk:</strong> <span id="score">0/100</span></div>
+    <section class="meter" aria-labelledby="risk-meter">
+      <div class="bar" id="bar" aria-hidden="true">
+        <div class="fill" id="fill"></div>
+      </div>
+      <div class="scale" aria-hidden="true">
+        <span>Low</span><span>Medium</span><span>High</span><span>Critical</span>
+      </div>
+      <div class="score" id="risk-meter">
+        <strong>Risk:</strong> <span id="score">0/100</span>
+      </div>
     </section>
 
     <h2>Findings</h2>
-    <ul id="findings"></ul>
+    <ul id="findings" aria-live="polite"></ul>
 
     <h2>Recommendations</h2>
-    <ul id="tips"></ul>
+    <ul id="tips" aria-live="polite"></ul>
 
-    <details class="muted"><summary>What we check</summary>
+    <details class="muted">
+      <summary>What we check</summary>
       <ul>
         <li>IP-in-URL, HTTP, “@” tricks, excessive subdomains</li>
-        <li>Punycode / confusable characters, percent-encoding spam</li>
-        <li>Typosquats of common brands (simple heuristic list)</li>
-        <li>Shorteners (bit.ly, tinyurl, etc.) and odd TLDs</li>
+        <li>Punycode / confusable characters, heavy percent encoding</li>
+        <li>Typosquats of common brands (simple heuristic)</li>
+        <li>Shorteners (bit.ly, tinyurl, etc.) and suspicious TLDs</li>
       </ul>
       <p>No network calls. All analysis runs in your browser.</p>
     </details>
   </main>
 
   <footer class="footer">
-    Built with HTML/CSS/JS • No libraries • <a href="https://github.com/Giuseppe552" target="_blank" rel="noreferrer">by Giuseppe</a>
+    Built with HTML/CSS/JS • No libraries •
+    <a href="https://github.com/Giuseppe552" target="_blank" rel="noreferrer">by Giuseppe</a>
   </footer>
 
   <script type="module" src="app.js"></script>
