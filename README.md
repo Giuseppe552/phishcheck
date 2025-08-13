@@ -16,14 +16,6 @@ No servers, no tracking, works **fully offline**. Paste a URL → get a **0–10
 - **Privacy-first:** All logic in the browser. No network calls.
 - Keyboard accessible + ARIA labels. Dark mode.
 
----
-
-## 🖼️ Screenshots
-**Desktop**
-![PhishCheck UI](assets/screenshots/desktop.png)
-
-*(Optional) Demo GIF — 30–45s of analyzing a URL*
-![Demo](assets/screenshots/demo.gif)
 
 ---
 
@@ -38,11 +30,13 @@ No servers, no tracking, works **fully offline**. Paste a URL → get a **0–10
 ## 🚀 Run locally
 ```bash
 npx http-server -p 5174 -c-1 .
+
+
 Open http://127.0.0.1:5174
 
 ---
 
-**## 🧪 Future improvements**
+## 🧪Future improvements
 
 Browser extension packaging (MV3)
 
