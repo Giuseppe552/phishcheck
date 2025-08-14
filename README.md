@@ -14,6 +14,11 @@ No servers, no tracking, works **fully offline**. Paste a URL → get a **0–10
   </video>
 </p>
 
+### 🎥 Demo
+
+![PhishCheck demo](assets/demo/demo.gif)
+
+
 
 ---
 
