@@ -6,6 +6,9 @@ No servers, no tracking, works **fully offline**. Paste a URL → get a **0–10
 
   **Live demo:** [https://github.com/Giuseppe552/phishcheck]
 
+🎥 **Demo Video**  
+[Watch the demo](assets/demo/demo.mp4)
+
 ---
 
 ## ✨ Features
