@@ -6,8 +6,14 @@ No servers, no tracking, works **fully offline**. Paste a URL → get a **0–10
 
   **Live demo:** [https://github.com/Giuseppe552/phishcheck]
 
-🎥 **Demo Video**  
-[Watch the demo](assets/demo/demo.mp4)
+### 🎥 Demo
+
+<p align="center">
+  <video src="assets/demo/demo.mp4" width="720" controls>
+    Your browser does not support the video tag.
+  </video>
+</p>
+
 
 ---
 
